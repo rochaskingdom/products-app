@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Department } from './models/department.model';
 import { Product } from './models/product.model';
 import { DepartmentService } from './department.service';
 
@@ -33,7 +32,7 @@ export class ProductService {
     }
   }
 
-  getProducts(): Department[] {
+  getProducts(): Product[] {
     return this.products;
   }
 
