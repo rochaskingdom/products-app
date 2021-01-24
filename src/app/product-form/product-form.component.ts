@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Department } from '../models/department.model';
+import { ProductService } from '../product.service';
+import { DepartmentService } from '../department.service';
 
 @Component({
   selector: 'app-product-form',
@@ -12,18 +14,33 @@ export class ProductFormComponent implements OnInit {
   department: Department;
   price: number;
   description: string;
+  departments: Department[];
 
-  constructor() { }
+  constructor(
+    private readonly productService: ProductService,
+    private readonly departmentService: DepartmentService
+  ) {
+  }
 
   ngOnInit(): void {
+    this.departments = this.departmentService.getDepartments();
   }
 
   save(): void {
-
+    this.productService.addProducts({
+      name: this.name,
+      price: this.price,
+      description: this.description,
+      department: this.department
+    });
+    this.clear();
   }
 
   clear(): void {
-
+    this.name = '';
+    this.price = 0;
+    this.description = '';
+    this.department = null;
   }
 
 }
