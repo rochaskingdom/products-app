@@ -8,6 +8,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { ProductFormComponent } from './product-form/product-form.component';
 import { DepartmentFormComponent } from './department-form/department-form.component';
 import { ProductsTableComponent } from './products-table/products-table.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -20,9 +24,14 @@ import { ProductsTableComponent } from './products-table/products-table.componen
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatTabsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
